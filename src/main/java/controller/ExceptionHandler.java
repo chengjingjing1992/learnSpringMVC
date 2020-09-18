@@ -3,8 +3,10 @@ package controller;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author chengjinging
@@ -22,7 +24,8 @@ public class ExceptionHandler implements HandlerExceptionResolver {
             ModelAndView modelAndView=new ModelAndView();
             modelAndView.addObject( "emsg",((ExceptionClass) e).getMsg());
             modelAndView.setViewName("error");
-            return modelAndView;
+
+        return modelAndView;
 
     }
 }
